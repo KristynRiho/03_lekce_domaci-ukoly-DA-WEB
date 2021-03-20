@@ -100,16 +100,27 @@ let prestupnost;
 
 if (rok % 4 !== 0) {
   prestupnost = 'nepřestupný rok';
-  // první document.write
 } else {
   if (rok % 100 === 0 && rok % 400 !== 0) {
     prestupnost = 'nepřestupný rok';
   } else {
     prestupnost = 'přestupný rok';
   }
-  //druhý document.write
 }
 
 document.write(`<p>Tvůj zadaný rok ${rok} je ${prestupnost}.<p/>`);
 
-// ******** přestupný rok 2 *********************
+// ******** přestupný rok - nejednodušší zápis *********************
+
+const rok = Number(prompt('Zadej rok:'));
+
+let prestupnost = 'nepřestupný';
+
+if (rok % 4 === 0) {
+  prestupnost = 'přestupný';
+  if (rok % 100 === 0 && rok % 400 !== 0) {
+    prestupnost = 'nepřestupný';
+  }
+}
+
+document.write(`<p>Tvůj zadaný rok ${rok} je ${prestupnost}.<p/>`);
